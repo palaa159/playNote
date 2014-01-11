@@ -1,0 +1,149 @@
+<!-- this is for player, use index.html to shorten URL 
+    playnote.local
+-->
+
+<!DOCTYPE html>
+<html class="no-js">
+    <head>
+    <!--anaheim webfont-->
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title>playNote</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width">
+        <style>
+            html, body {
+                width: 100%;
+                height: 100%;
+                font-family: "Anaheim";
+                color: black;
+                font-size: 16px;
+            }
+            .circle {
+            position: absolute;
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            text-align: center;
+            opacity: .8;
+            }
+            .template {
+                display: none;
+            }
+            .nameStyle {
+            
+            }
+
+        </style>
+
+    </head>
+    <body>
+        <div class="container">
+            <div class="circle template">
+                <div class="nameStyle"></div>
+            </div>
+        </div> <!--end of container-->
+        <script type="text/javascript" src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
+        <script type="text/javascript">
+
+
+            var radius;
+            var playerNum = 10;
+            //constructor
+            function walker(name){
+                this.init(name);
+                this.steps();
+            }
+
+            // var avrWidth = function(playerNum){
+            //     var avrWidth = window.innerWidth/playerNum;
+            //     for (var i = 0; i < playerNum; i++){
+            //         var postionX = avrWidth * (i+1);
+            //         // console.log(postionX);
+            //         return postionX;
+            //     }
+            // }
+
+            // console.log(avrWidth(playerNum));
+
+
+            function avrWidth(playerNumArg) { // arg name, not var
+                return {
+                    x: window.innerWidth * playerNumArg,
+                    y: 20
+                };
+            }
+
+            walker.prototype.init = function(name) {
+                radius = Math.random() * 75 + 75;
+                // this.posX = Math.abs(Math.floor(Math.random() * (window.innerWidth-radius)-radius));
+                this.posX = avrWidth(playerNum).x * this should be a for loop!!!;
+                this.posY = (window.innerHeight/2 - radius/2);
+                this.name = name;
+                $('.template')
+                    .clone()
+                    .css({
+                        'background-color': getBgColor(),
+                        'width': radius,
+                        'height': radius
+                        })
+                    .attr({'id': name})
+                    // .children() //all nested elements indside '.template'
+                    .find('.nameStyle')
+                    .html(name)
+                    .css('padding-top', radius*.4)
+                    .parent() // goes back up tp '.template'
+                    .removeClass('template')
+                    .appendTo('.container');
+            }
+
+            walker.prototype.steps = function(){
+                var that = this;
+                setInterval(function() {
+                var step = Math.floor(Math.random() * 4);
+                // console.log(step);
+                if (step == 0) {
+                     that.posX++;
+                     // console.log(that.posX + " " + that.posY);
+                    } else if (step == 1) {
+                      that.posX--;
+                     // console.log(that.posX + " " + that.posY);
+                    } else if (step == 2) {
+                      that.posY++;
+                    } else {
+                      that.posY--;
+                    }
+
+                    var min = -5;
+                    var max = 5;
+                    var randomSpeed = Math.floor(Math.random() * (max - min + 1)) + min;
+
+
+                        $('#' + that.name).css({
+                            top: that.posY,
+                            left: that.posX
+                            });
+                },
+                40); 
+             };
+
+
+            var getBgColor = function () {
+                var h = Math.floor(Math.random() * 359) + 1,
+                    // s = 100,
+                    s = Math.floor(Math.random() * 25) + 75,
+                    b = 50;
+                return 'hsl(' + h + ',' + s + '%,' + b + '%' + ')';
+            }
+
+            // var circ1 = new walker('noa');
+            // var circ2 = new walker('eliz');
+
+            for (var i = 0; i < playerNum+1; i++){
+                new walker("name" + i);
+            }
+
+
+        </script>
+    </body>
+</html>

@@ -1,0 +1,135 @@
+@font-face {
+    font-family: "Anaheim";
+    src: url(../fonts/Anaheim-Regular.otf);
+    /*Anaheim-Regular-unhinted.ttf*/
+}
+
+/* COLOR HEX:
+
+1=C= #990000
+2=C#= #fc1d4c
+3=D= #fd3aa8
+4=D#= #fe701e
+5=E=  #fcba0a
+6=F= #9bed00
+7=F#= #14c431
+8=G= #0ccbcb
+9=G#= #1e89c7
+10=A= #103ba1
+11=A#= #4329a1
+12=B= #9f26bd
+13=C2=  #560369
+
+**should pick a specific grey maybe??
+*/
+
+* {
+    -webkit-touch-callout: none;                /* prevent callout to copy image, etc when tap to hold */
+    -webkit-text-size-adjust: none;             /* prevent webkit from resizing text to fit */
+    -webkit-tap-highlight-color: rgba(0,0,0,0); /* make transparent link selection, adjust last value opacity 0 to 1.0 */
+    -webkit-user-select: none;                 /* prevent copy paste, to allow, change 'none' to 'text' */
+    font-family: "Anaheim";
+}
+
+*:focus {
+    outline-width: 0;
+    outline: none;
+}
+
+input {
+    -webkit-user-select: auto !important;
+}
+html, body {
+    width: 100%;
+    height: 100%;
+    color: black;
+}
+#pageLogin {
+}
+
+.instructions {
+    margin-top: 30px;
+    margin-bottom: -10px;
+}
+
+#pNameIpt {
+    margin-top: 20px;
+    height: 40px;
+    font-size: 1.5em;
+    border: 4px solid #000;
+}
+
+.page {
+    background: white;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+}
+.pageContainer {
+    position: absolute;
+    text-align: center;
+    width: 100%;
+    /*will be centered by javascript*/
+}
+.wait {
+    color: #000;
+    font-size: 3em;
+    line-height: 0.9em;
+    text-transform: uppercase;
+    font-weight: bolder;
+}
+
+.userName, .assignedNote{
+    /*color:#fc1d4c;*/
+}
+
+button, input {
+    text-align:center;
+}
+
+#userName{ 
+    display:inline;
+    font-weight: bold;
+    /*color:#fc1d4c;*/
+}
+
+h3 {
+    font-size: 2em;
+}
+
+#assignedNote{
+    padding: 25px 0 20px 0;
+    /*color: #fc1d4c;*/
+    font-size: 6em;
+}
+
+#pJoinBtn, #pJoinBtn2 {
+    color: white;
+    font-weight: 100;
+    background: #000;
+    margin: 0 auto;
+    margin-top: 40px;
+    width: 100px;
+    height: 100px;
+    border-style: none;
+/*    border-color: #cfcfcf;*/
+    border-radius: 50%;
+}
+
+#pJoinBtn h1 {
+    margin-bottom:20px;
+}
+
+#pJoinBtn h1 {
+    margin-bottom:20px;
+}
+
+.whiteText > * {
+    color: white;
+}
+
+h2 {
+    margin:5px;
+}

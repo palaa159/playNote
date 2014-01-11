@@ -1,0 +1,81 @@
+<!-- this is for player, use index.html to shorten URL 
+    playnote.local
+-->
+
+<!DOCTYPE html>
+<html class="no-js">
+    <head>
+    <!--anaheim webfont-->
+   <link href='http://fonts.googleapis.com/css?family=Anaheim' rel='stylesheet' type='text/css'> 
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title>playNote</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width">
+        <link rel="stylesheet" href="css/normalize.min.css">
+        <link rel="stylesheet" href="css/main.css">
+        <script type="text/javascript" src="js/responsive.js"></script>
+        <script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+
+        <!--Bootstrap-->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/CustomBS.css" rel="stylesheet">
+    <script src="js/respond.js"></script>
+
+        <!--<link rel="stylesheet" href="css/ElizCustom.css">-->
+    </head>
+    <body>
+        <div class="container">
+            <section class="row">
+        <!--<div id="screen1Container">-->             
+                <div class="screen1 col-lg-12 visible-lg visible-md">   
+                    <h2>Hey! You made it!</h2>
+                    <h1>Login to get a note</h1>
+                    <input id="pNameIpt" placeholder="Your Name">
+                    <div id="pJoinBtn"><h1>OK</h1></div>
+                </div>
+
+                <div class="screen1 col-lg-12 visible-sm visible-xs">   
+                    <h2 id="marginTop">Hey! You made it!</h2>
+                    <h1>Login to get a note</h1>
+                    <input id="pNameIpt" placeholder="Your Name">
+                    <div id="pJoinBtn"><h1>OK</h1></div>
+                </div>
+         <!-- </div>-->
+
+
+
+            <div class="screen2 col-lg-12 col-xs-12">
+                <h2>Woo!</h2>
+                <h3><div class="userName" style="inline">UserX</div> you are</h3>
+                <div class="assignedNote">C#</div>
+                <p class="instructions">1. Find your note on the screen.</p>
+                <p class="instructions">2. Touch your phone when it's your turn.</p>
+                <div class="pJoinBtn2"><h1>OK</h1></div>
+            </div>
+
+            <div class="screen3 col-lg-12 col-xs-12">
+                <p class="wait">wait for it...</p>
+            </div>
+
+             <div class="screen4 col-lg-12 col-xs-12">
+                <p class="now">Now!</p>
+            </div>
+
+        </div> <!--end of section Row-->
+        </div> <!--end of container-->
+
+
+
+        <script src="http://localhost:9001/socket.io/socket.io.js"></script>
+        <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.10.1.min.js"><\/script>')</script>
+        <script src="js/vendor/modernizr-2.6.2-respond-1.1.0.min.js"></script>
+        <script src="js/vendor/prefixfree.min.js"></script>
+        <script src="js/handlers/p_socketHandler.js"></script>
+        <script src="js/handlers/screenHandler.js"></script>
+        <script src="js/player.js"></script>
+
+        <!--BOOTSTRAP-->
+           <script src="js/bootstrap.min.js"></script>
+    </body>
+</html>

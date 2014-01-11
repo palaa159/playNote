@@ -1,0 +1,74 @@
+<!-- this is for player, use index.html to shorten URL 
+    playnote.local
+-->
+
+<!DOCTYPE html>
+<html class="no-js">
+    <head>
+
+    <!--anaheim webfont-->
+    <link href='http://fonts.googleapis.com/css?family=Anaheim' rel='stylesheet' type='text/css'>
+
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title>playNote</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width">
+        <link rel="stylesheet" href="css/normalize.min.css">
+        <link rel="stylesheet" href="css/main.css">
+        <script type="text/javascript" src="js/responsive.js"></script>
+
+        <link rel="stylesheet" href="css/ElizCustom.css">
+    </head>
+    <body>
+        <div id="container">
+            <div id="introContainer">
+               <!-- <div id="cir1"></div>
+                <div id="cir2"></div>
+                <div id="cir3"></div>
+                <div id="cir4"></div>
+                <div id="cir5"></div>
+                <div id="cir6"></div>
+                <div id="cir7"></div>
+                <div id="cir8"></div>
+                <div id="cir9"></div>
+                <div id="cir10"></div>
+                <div id="cir11"></div>
+                <div id="cir12"></div>
+                <div id="cir13"></div> -->
+                <div id="intro">   
+                    <h2>Hey! You made it!</h2>
+                    <div id="bigText">Login to get a note</div>
+                    <input id="pNameIpt" placeholder="Your Name">
+                    <!--<button id="pJoinBtn">OK</button>-->
+                    <div id="pJoinBtn"><p>OK</p></div>
+                </div>
+            </div>
+
+            <div id="my-note-2">
+                <h2>Woo!</h2>
+                <div id="bigText"><div id="userName">UserX</div> you are</div>
+                <div id="assignedC_2">C#</div>
+                <div id="instructions">1. Find your note on the screen.</div>
+                <div id="instructions">2. Touch your phone when it's your turn.</div>
+                <div id="pJoinBtn"><p>OK</p></div>
+            </div>
+
+            <div id="waitScreen-3">
+                <p>wait for it...</p>
+            </div>
+
+             <div id="nowScreen-4">
+                <p>Now!</p>
+            </div>
+        </div><!--end of container-->
+
+        <script src="http://localhost:9001/socket.io/socket.io.js"></script>
+        <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.10.1.min.js"><\/script>')</script>
+        <script src="js/vendor/modernizr-2.6.2-respond-1.1.0.min.js"></script>
+        <script src="js/vendor/prefixfree.min.js"></script>
+        <script src="js/handlers/p_socketHandler.js"></script>
+        <script src="js/handlers/screenHandler.js"></script>
+        <script src="js/player.js"></script>
+    </body>
+</html>

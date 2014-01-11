@@ -1,0 +1,122 @@
+/*=================css3 @fontface====================*/
+
+@font-face {
+	font-family: "Anaheim";
+	src: url(../fonts/Anaheim-Regular.otf);
+	/*Anaheim-Regular-unhinted.ttf*/
+}
+
+
+/* COLOR HEX:
+
+1=C= #990000
+2=C#= #fc1d4c
+3=D= #fd3aa8
+4=D#= #fe701e
+5=E=  #fcba0a
+6=F= #ffff00
+7=F#= #9bed00
+8=G= #14c431
+9=G#= #0ccbcb
+10=A= #1e89c7
+11=A#= #103ba1
+12=B= #9f26bd
+13=C2=  #560369
+
+**should pick a specific grey maybe??
+*/
+
+body{
+	/*font-family:"Trebuchet MS", Helvetica, sans-serif;*/
+font-family: "Anaheim", Arial, serif; 
+}
+
+h1, h2, h3, p{font-family: "Anaheim", Arial, serif;}
+
+.userName, .assignedNote{color:#fc1d4c;}
+
+button, input{
+text-align:center;
+}
+
+#userName{ color:#fc1d4c; display:inline;}
+
+#assignedNote{
+color: #fc1d4c;
+font-size: 4em;
+padding: 25px 0 20px 0;
+}
+
+#pJoinBtn{
+margin: 0 auto;
+margin-top: 20px;
+width: 50px;
+height: 50px;
+border-radius: 50%;
+border-style: solid;
+border-color: #cfcfcf;
+}
+
+#pJoinBtn2{
+margin: 0 auto;
+margin-top: 20px;
+width: 50px;
+height: 50px;
+border-radius: 50%;
+border-style: solid;
+border-color: #cfcfcf;
+}
+
+#pJoinBtn h1{margin-bottom:20px;}
+
+#pJoinBtn h1{margin-bottom:20px;}
+
+
+
+/*
+.screen1{
+background-color:azure;
+text-align:center;
+}
+
+.screen1.col-lg-12.visible-sm.visible-xs h2{
+	font-size:2em;
+}
+
+
+.screen1.col-lg-12.visible-lg.visible-md h2{
+	font-size:4em;
+}
+
+
+.screen2{
+background-color:blue;
+text-align:center;
+}
+
+.screen3{
+background-color:grey;
+color:#fc1d4c;
+text-align:center;	
+}
+
+.screen3 p{ 
+font-size: 4.7em;
+text-align: center;
+line-height: 80%;
+padding-top: 35%;
+}
+
+.screen4{
+background-color:#fc1d4c;
+color:white;
+text-align:center;
+}
+
+#screen4 p{ 
+color:white;
+font-size: 4.7em;
+text-align: center;
+line-height: 80%;
+padding-top: 50%;
+}*/

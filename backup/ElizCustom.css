@@ -1,0 +1,358 @@
+/*=================css3 @fontface====================*/
+
+/*@font-face {
+	font-family: "Anaheim";
+	src: url(../fonts/Anaheim-Regular.otf);
+	/*Anaheim-Regular-unhinted.ttf*/
+/*}*/
+
+/* COLOR HEX:
+
+1=C= #990000
+2=C#= #fc1d4c
+3=D= #fd3aa8
+4=D#= #fe701e
+5=E=  #fcba0a
+6=F= #ffff00
+7=F#= #9bed00
+8=G= #14c431
+9=G#= #0ccbcb
+10=A= #1e89c7
+11=A#= #103ba1
+12=B= #9f26bd
+13=C2=  #560369
+
+**should pick a specific grey maybe??
+*/
+
+body{
+/*font-family: "Anaheim", Arial, serif; 
+*/
+font-family:"Trebuchet MS", Helvetica, sans-serif;
+font-weight: 400;
+background-color:black;
+z-index:-5;
+}
+
+/*------------------------INTRO-------------------*/
+/*
+#cir1{
+width: 2em;
+height: 2em;
+border-radius: 50%;
+background-color:#fc1d4c;
+position:absolute;
+left:10px;
+top:10px;
+opacity:.5;
+}
+
+#cir2{
+width: 2em;
+height: 2em;
+border-radius: 50%;
+background-color:#990000;
+position:absolute;
+left:220px;
+top:-10px;
+opacity:.5;
+}
+
+#cir3{
+width: 2em;
+height: 2em;
+border-radius: 50%;
+background-color:#fd3aa8;
+position:absolute;
+left:40px;
+top:100px;
+opacity:.5;
+}
+
+#cir4{
+width: 2em;
+height: 2em;
+border-radius: 50%;
+background-color:#fe701e;
+position:absolute;
+left:110px;
+top:180px;
+opacity:.5;
+}
+
+#cir5{
+width: 2em;
+height: 2em;
+border-radius: 50%;
+background-color:#fcba0a;
+position:absolute;
+left:150px;
+top:130px;
+opacity:.5;
+}
+
+#cir6{
+width: 2em;
+height: 2em;
+border-radius: 50%;
+background-color:#ffff00;
+position:absolute;
+left:120px;
+top:180px;
+opacity:.5;
+}
+
+#cir7{
+width: 2em;
+height: 2em;
+border-radius: 50%;
+background-color:#9bed00;
+position:absolute;
+left:160px;
+top:80px;
+opacity:.5;
+}
+
+#cir8{
+width: 2em;
+height: 2em;
+border-radius: 50%;
+background-color:#14c431;
+position:absolute;
+left:100px;
+top:160px;
+opacity:.5;
+
+}
+
+#cir9{
+width: 2em;
+height: 2em;
+border-radius: 50%;
+background-color:#0ccbcb;
+position:absolute;
+left:190px;
+top:250px;
+opacity:.5;
+}
+
+#cir10{
+width: 2em;
+height: 2em;
+border-radius: 50%;
+background-color:#1e89c7;
+position:absolute;
+left:70px;
+top:200px;
+opacity:.5;
+}
+
+#cir11{
+width: 2em;
+height: 2em;
+border-radius: 50%;
+background-color:#103ba1;
+position:absolute;
+left:1300px;
+top:310px;
+opacity:.5;
+}
+
+#cir12{
+width: 2em;
+height: 2em;
+border-radius: 50%;
+background-color:#9f26bd;
+position:absolute;
+left:45px;
+top:300px;
+opacity:.5;
+}
+
+#cir13{
+width: 2em;
+height: 2em;
+border-radius: 50%;
+background-color:#560369;
+position:absolute;
+left:45px;
+top:300px;
+opacity:.5;
+}
+
+#intro h2{
+font-size: 20px;
+padding-top: 10%;
+line-height:70%;
+}
+
+*/
+
+#introContainer{
+z-index:-1;
+}
+#intro{
+text-align:center;
+background:white;
+width:240px;
+height:320px;
+}
+
+
+
+h2 {
+font-size: 20px;
+padding-top: 10%; /*was 20px*/
+line-height:70%;
+}
+
+#intro #bigText{
+font-size:1.6em;	
+line-height:70%;
+z-index:1;
+
+}
+
+button, input{
+text-align:center;
+}
+
+#pNameIpt{
+/*margin-top: 10px;
+margin-bottom: 40px;*/
+margin-top: 10%;
+margin-bottom: 8%;
+/*height: 20px;*/
+z-index:1;
+}
+
+
+#pJoinBtn{
+margin: 0 auto;
+/*margin-top: 10px;*/
+margin-top: 5%;
+/*width: 75px;
+height: 75px;*/
+width: 4.68em;
+height: 4.68em;
+
+border-radius: 50%;
+border-style:solid; 
+border-color:grey;
+}
+
+#pJoinBtn p{
+/*font-size: 3.2em; keep as pixels*/
+font-size:40px;
+margin-top: 25px;
+}
+
+/*-----------------------my-note-2-------------------*/
+ #my-note-2 {
+text-align:center;
+background:white;
+width:240px;
+height:320px;
+ }
+
+ #my-note-2 h2{
+font-size: 1.2em;
+padding-top: 10%;
+line-height:70%;
+}
+
+#my-note-2 #bigText{
+font-size:1.6em;	
+line-height:70%;
+}
+
+#my-note-2 #instructions{
+font-size: 1em;
+}
+
+#userName{
+display:inline;
+color:#fc1d4c;
+}
+#assignedNote{
+color: #fc1d4c;
+font-size: 4em;
+padding: 25px 0 20px 0;
+}
+/*--------WAIT FOR IT_3--------*/
+#waitScreen-3{
+width:240px;
+height:320px;
+background:white;
+}
+#waitScreen-3 p{
+color:#fc1d4c;
+font-size: 4.7em;
+text-align: center;
+line-height: 80%;
+/*padding-top: 80px;*/
+padding-top: 35%;
+}
+/*--------NOW_4--------*/
+#nowScreen-4{
+width:240px;
+height:320px;
+background:#fc1d4c;
+}
+
+#nowScreen-4 p{
+color:white;
+font-size: 4.7em;
+text-align: center;
+line-height: 80%;
+/*padding-top: 120px;*/
+padding-top: 50%;
+}
+
+/*---media queries---*/
+
+/*  IPAD, media queries stuff */
+/*@media screen and (max-width:1024px) {
+	body{background-color:grey;}
+
+}*/
+
+/*  IPAD Portrait, media queries stuff */
+/*@media screen and (max-width:768px) {
+	body{background-color:blue;}
+	#intro,  #my-note-2, #waitScreen-3, #nowScreen-4{
+		width:768px;
+		height: 1024px;
+	}
+
+	#intro, #my-note-2, h2 {font-size: 2.3em;}
+}*/
+
+/*  IPHONE 5*/
+/*@media screen and (max-width:480px) {
+	body{background-color:green;}
+	#intro,  #my-note-2, #waitScreen-3, #nowScreen-4{
+		width:640px;
+		height:1136px;
+	}
+}*/
+
+
+/*  IPHONE 4*/
+/*@media screen and (max-width:480px) {
+	body{background-color:green;}
+	#intro,  #my-note-2, #waitScreen-3, #nowScreen-4{
+		
+		*width:640px;
+		height:960px;
+	}
+}*/
+
+/*  IPHONE Portrait*/
+/*@media screen and (max-width:320px) {
+	body{background-color:orange;}
+	#intro,  #my-note-2, #waitScreen-3, #nowScreen-4{
+		width:320px;
+	
+	}
+}*/

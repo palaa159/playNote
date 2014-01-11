@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>animate demo</title>
+  <style>
+  * {
+    margin:0;
+    padding:0;
+  }
+  body{
+    background: #9bc243
+  }
+  #nowBackground {
+    background-color: #fff;
+    position: absolute;
+    height:100%;
+    width: 100%;
+  }
+
+  h1 {
+    color:black;
+  }
+
+  </style>
+  <script src="http://code.jquery.com/jquery-1.10.2.js"></script>
+</head>
+<body>
+
+
+ 
+ <div id="nowBackground"></div>
+ <h1 id="countDown10">Wait for it...</h1>
+   <script>
+ 
+
+  var countdown = function(songSeq) {
+    var timer = 5;
+    // $('#countDown10').html(timer);
+    var countFive = new Countdown({
+      seconds: timer, // number of seconds to count down
+      onUpdateStatus: function(sec) {
+        // $('#countDown10').html(sec);
+        console.log(sec);
+        if (sec = 1){
+          $('#countDown10')
+            .html('Now!')
+            .css('h1','white');
+        }
+      }, // callback for each second
+      onCounterEnd: function() {
+        setTimeout(function() {
+        }, 1000);
+      }
+    });
+    countFive.start();
+  }
+
+  // countdown();
+
+  $('#nowBackground').animate({
+        width: window.innerWidth,
+        height: 0,
+      }, 500); 
+
+
+
+function Countdown(options) {
+  var timer,
+    instance = this,
+    seconds = options.seconds || 10,
+    updateStatus = options.onUpdateStatus || function() {},
+    counterEnd = options.onCounterEnd || function() {};
+
+  function decrementCounter() {
+    updateStatus(seconds);
+    if (seconds === 0) {
+      counterEnd();
+      instance.stop();
+    }
+    seconds--;
+  }
+
+  this.start = function() {
+    clearInterval(timer);
+    timer = 0;
+    seconds = options.seconds;
+    timer = setInterval(decrementCounter, 1000);
+  };
+
+  this.stop = function() {
+    clearInterval(timer);
+  };
+}
+
+</script>
+
+</body>
+</html>

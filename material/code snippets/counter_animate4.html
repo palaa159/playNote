@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>animate demo</title>
+  <style>
+
+  body{
+    background:lightgrey;
+    margin:0;
+    padding:0;
+  }
+
+  .circle {
+    position: absolute;
+    background-color: red;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    text-align: center;
+  }
+    .circle2 {
+      position: absolute;
+      background-color: none;
+      width: 20px;
+      height: 20px;
+      top:100px;
+      left:50px;
+      color: blue;
+      border-radius: 50%;
+      border-style: solid;
+      border-width: 6px;
+      text-align: center;
+      opacity: .8;
+  }
+
+  </style>
+  <script src="http://code.jquery.com/jquery-1.10.2.js"></script>
+</head>
+<body>
+
+  <div class="circle"></div>
+    <div class="circle2"></div>
+
+
+
+  <script>
+
+    var $circleAnim = $('.circle');
+
+    function runAnim() {
+        $circleAnim.animate({
+          width: [200, "swing"],
+          height: [200, "swing"],
+        }, 800, function() { // animation end
+          $circleAnim.animate({
+            width: [20, "swing"], 
+            height: [20, "swing"],
+          }, 800, function() { 
+              // $circleAnim.removeAttr("style");
+              runAnim();
+          });
+        });
+    }
+    runAnim();
+
+
+
+    var $circleAnim2 = $('.circle2');
+
+    function runAnim2() {
+       $circleAnim2.animate({
+            width: [500, "swing"], 
+            height: [500, "swing"],
+            opacity: 0,
+          }, 2000, function() { 
+              $circleAnim2.removeAttr("style");
+              runAnim2();
+          });
+    }
+    runAnim2();
+
+
+    // for (var i = 1; i < 3; i++){
+
+    //   $('body').html('<div class="circle"' + i '></div>');
+
+    // }
+
+
+
+  </script>
+ 
+ 
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html class="no-js">
+    <head>
+    <!--anaheim webfont-->
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title>playNote</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width">
+        <script type="text/javascript" src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
+        <script type="text/javascript">
+        
+        var counter = function(){
+           var count = 0;
+                setInterval(function() {                  
+                  if (count <= 10){
+                  count++;
+                  console.log(count);              
+                  } 
+                  if (count > 10){
+                    $('#nowBackground').css('background-color', 'yellow');
+                    count = 0;
+                    console.log(count);
+                  }
+                }, 40);
+            };
+
+        counter();
+             </script>
+           </head>
+           <body id="nowBackground"></body>
+          </html>

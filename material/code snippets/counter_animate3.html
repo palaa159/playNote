@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>animate demo</title>
+  <style>
+  * {
+    margin:0;
+    padding:0;
+  }
+  body{
+    background: #9bc243
+  }
+  #nowBackground {
+    background-color: #fff;
+    position: absolute;
+    text-align:center;
+    height:100%;
+    width: 100%;
+    color:black;
+  }
+
+
+  </style>
+  <script src="http://code.jquery.com/jquery-1.10.2.js"></script>
+</head>
+<body>
+
+  <div id="nowBackground"></div>
+
+  <script>
+
+    $('#nowBackground').animate({
+          opacity: [0,"swing"]
+        }, 200, function() {
+        console.log('Animation complete!');
+    });
+
+  </script>
+ 
+ 
+</body>
+</html>

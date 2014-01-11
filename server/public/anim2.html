@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html class="no-js">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title>animimation 2</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width">
+        <link rel="stylesheet" href="css/normalize.min.css">
+        <link rel="stylesheet" href="css/main.css">
+        <link rel="stylesheet" href="css/animStyle.css">
+
+    </head>
+    <body>
+        <div id="container">
+            <div id="cir1"></div>
+            <div id="cir2"></div>
+            <div id="cir3"></div>
+            <div id="cir4"></div>
+            <div id="cir5"></div>
+            <div id="cir6"></div>
+            <div id="cir7"></div>
+        </div><!--end container-->
+
+
+       <!-- <script src="http://localhost:9001/socket.io/socket.io.js"></script>-->
+       <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.10.1.min.js"><\/script>')</script>
+       <script>
+
+//var allCircles=["cir1","cir2","cir3"];
+        var cir1=document.getElementById('cir1');
+        var cir2=document.getElementById('cir2');
+        var cir3=document.getElementById('cir3');
+        var cir4 =document.getElementById('cir4');
+        var cir5 =document.getElementById('cir5');
+        var cir6 =document.getElementById('cir6');
+        var cir7 =document.getElementById('cir7');
+var allCircles=[cir1,cir2,cir3];
+var a;
+
+//aesthetic functions
+
+function makeCirclesGrow(){
+     $(this).animate({width: '+=3px',
+                    height: '+=3px',
+        });
+    }
+
+function makeCirclesShrink(){
+     $(this).animate({width: '-=3px',
+                    height: '-=3px',
+        });
+    }
+// function sizeByTimer(){
+//       $('#cir4').css({
+//             width: startGrad() + 'px'
+//         }); 
+// }
+
+  //give objects methods
+   allCircles.Grow = makeCirclesGrow;
+allCircles.Shrink = makeCirclesShrink;
+     //allCircles.onTimer = Timer;
+
+
+//TIMER
+function Timer(){
+    a=0;
+    //var a = 0;
+    var increasing= false;
+    var first100 = false;
+    var grow = setInterval(function(){
+        if(first100 == false) { // starting
+            a++;
+            increasing=true;
+            if(a >= 100) {
+            first100 = true;
+            }}
+       if(first100 == true) {
+            a--;
+             increasing=false;
+            if(a <= 0) {
+            first100 = false;
+        }}
+   console.log(a);
+//PUT STUFF HERE TO DO ON TIMER
+
+//THIS IS BREATHING EFFECT!!
+if (a<=99){
+ allCircles.Grow();   
+}
+if (a<=99){
+ allCircles.Shrink();   
+}
+
+
+/*if (increasing==true){
+ allCircles.Grow();   
+}
+if (increasing==false){
+ allCircles.Shrink();   
+}*/
+
+if (a>=70){
+      $(cir4).css({
+            width: a + 'px',
+            height: a + 'px'
+    }); 
+}
+
+    $(cir3).css({
+            opacity: (a * .01)
+    });
+
+      $(cir5).css({    
+       // background: 'rgb(252,29,'+(a+76)+')'
+       //background: 'radial-gradient(rgba(252,29,76,1), rgba(252,29,76,'+(a*.01)+'))'
+       background: 'radial-gradient(rgba(252,29,76,1), rgba(253,58,'+(a*76)+','+(a*.01)+'))'    
+    });
+
+        $(cir7).css({
+
+                width: (a*4) + 'px',
+                height: (a*4) + 'px',
+               // left: ((190-a)+5) + 'px',
+               //  top: ((190-a)+5) + 'px'
+               left: ((200-(a*2))+4) + 'px',
+                top: ((200-(a*2))+4) + 'px'
+        });
+
+  
+
+
+
+    },1000/30); //end setInterval
+  return a;
+} ///end Timer
+
+          
+
+
+        container.onclick = function(){
+            Timer();
+            //console.log("circle should be growing");
+            //allCircles.onTimer();
+            //allCircles.Grow();
+
+        };//end click
+
+      cir1.onclick = function(){
+            console.log("shrink");
+            //call methods
+            allCircles.Shrink();
+        };//end click
+       </script>
+   </body>
+   </html>

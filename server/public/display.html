@@ -1,0 +1,74 @@
+<!-- this is for display
+-->
+
+<!DOCTYPE html>
+<html class="no-js">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title>testApp</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width">
+        <link rel="stylesheet" href="css/normalize.min.css">
+        <link rel="stylesheet" href="css/main.css">
+        <link rel="stylesheet" href="css/displayMain.css">
+    </head>
+    <body>
+        <div id="container">
+            <!-- debug -->
+            <!-- <div id="debug" style="position: fixed; top:0; left:0; width: 70px; height: auto; background: white; z-index: 99; font-size: 0.4em;">
+                Current song: <p id="currSong"></p>
+                Players: <p id="currPlayers"></p>
+            </div> -->
+            <!-- WALKER -->
+            <div id="d_walker_container">
+                <div id="walker" class="circle template">
+                </div>
+            </div>
+            <!-- intro -->
+            <section id="d_intro">
+                <header id="d_intro_welcomeMsg">
+                    <p class="d_intro_p_welcomeMsg">Welcome to PlayNote!</p>
+                </header>
+                <div id="d_intro_waiting">
+                    <span class="d_intro_waiting_text">Need </span>
+                    <span class="d_intro_waiting_text" id="d_intro_waiting_number">2 </span>
+                    <span class="d_intro_waiting_text">or more people. Come join!</span>
+                </div>
+            </section>
+            <!-- Lobby -->
+            <section id="d_lobby">
+                <header id="d_lobby_welcomeMsg">
+                    <p class="d_lobby_p_welcomeMsg">Be Prepared, the upcoming song is</p>
+                    <p class="d_lobby_p_nextSong"></p>
+                </header>
+                <div id="d_lobby_playerList">
+                    <!-- <div id="template_player" class="d_player_bubble template">
+                        <p id="d_playerName">Dummy</p>
+                        <p id="d_playerNote">C#</p>
+                    </div> -->
+                </div>
+                <div id="d_lobby_countdown_container">
+                    <p class="d_lobby_will_start">Game will start in </p>
+                    <p id="d_lobby_countdown" class="d_lobby_countdown_text">10</p>
+                </div>
+            </section>
+            <!-- Game -->
+            <section id="d_game">
+                <div id="d_playingNote_container">
+                    <span id="d_playingNote_text">Playing: </span>
+                    <span id="d_playingNote"></span>
+                </div>
+            </section>
+        </div>
+        <script src="http://localhost:9001/socket.io/socket.io.js"></script>
+        <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.10.1.min.js"><\/script>')</script>
+        <script src="js/vendor/modernizr-2.6.2-respond-1.1.0.min.js"></script>
+        <script src="js/vendor/prefixfree.min.js"></script>
+        <script src="js/handlers/soundHandler.js"></script>
+        <script src="js/handlers/d_socketHandler.js"></script>
+        <script src="js/handlers/screenHandler.js"></script>
+        <script src="js/display.js"></script>
+        <script src="js/walker.js"></script>
+    </body>
+</html>

@@ -1,0 +1,174 @@
+<!-- this is for display
+-->
+<!DOCTYPE html>
+<html class="no-js">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title>anim1</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width">
+        <link rel="stylesheet" href="css/normalize.min.css">
+        <link rel="stylesheet" href="css/main.css">
+        <link rel="stylesheet" href="css/animStyle.css">
+
+    </head>
+    <body>
+        <div id="container">
+            <div id="cir1"></div>
+            <div id="cir2"></div>
+            <div id="cir3"></div>
+            <div id="cir4"></div>
+           
+
+        </div><!--end container-->
+
+
+       <!-- <script src="http://localhost:9001/socket.io/socket.io.js"></script>-->
+       <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.10.1.min.js"><\/script>')</script>
+        <!--<script src="js/vendor/modernizr-2.6.2-respond-1.1.0.min.js"></script>
+        <script src="js/vendor/prefixfree.min.js"></script>
+        <script src="js/handlers/soundHandler.js"></script>
+        <script src="js/handlers/d_socketHandler.js"></script>
+        <script src="js/handlers/screenHandler.js"></script>
+        <script src="js/display.js"></script>-->
+
+        <script>
+        $(document).ready(function(){
+            console.log("Doc ready");
+        //global
+        var container=document.getElementById("container");
+        var cir1=document.getElementById('cir1');
+        var cir2=document.getElementById('cir2');
+        var cir3=document.getElementById('cir3');
+
+
+        
+        function growCircle(){
+            $(cir1).animate({width: '+=3px',
+                            height: '+=3px',
+
+            });
+            $(cir1).css({opacity: '-=.007'});
+        }//end growCircle
+
+        function changeBkgd(){
+            $(cir3).css({background: '#fd3aa8'});
+        }
+
+        function changeBkgdBack(){
+           /* $(cir3).css({background: 'radial-gradient(rgba(253,58,169,1), rgba(253,58,169,0));'});*/
+            document.getElementById("cir3").className = "changeGrad";
+        }
+
+        /*function startGrad() {
+            var o = 1;
+            var passFirstHundred = false;
+            var grow = setInterval(function() {
+                if(passFirstHundred == false) {
+                    o++;
+                   if(o >= 100) {
+                        
+                        passFirstHundred = true;
+                        //o -= 1;
+                         }
+
+                    }
+                 
+                else {
+                    o--;
+                    }
+
+                    if(o == 1) {
+                        o++;
+                    }
+                     else if(o >= 100) {
+                        o--;
+                    }
+               
+                
+                console.log(o);
+            }, 1000/30);
+        }*/
+
+        function startGrad(){
+            // var o=1;
+            var a = 0;
+            var first100 = false;
+            var grow = setInterval(function(){
+
+
+                if(first100 == false) { // starting
+                    a++;
+                    if(a >= 100) {
+                    first100 = true;
+                    }}
+
+               if(first100 == true) {
+                    a--;
+                    if(a <= 0) {
+                    first100 = false;
+                }}
+                console.log(a);
+
+            },1000/30);
+            return a;
+        } 
+        /*
+        function shrinkCircle(){
+         $(cir2).animate({width: '-=3px',
+                        height: '-=3px',
+
+            },0);
+        }//end 
+        */
+        $('#cir3 ').css({
+            width: startGrad() + 'px'
+        }); 
+        container.onclick = function(){
+            console.log("circle should be growing");
+           /* cir1.style.background="background: -webkit-radial-gradient(rgba(252,29,76,1), rgba(252,29,76,0))"; 
+            cir1.style.background="background: -o-radial-gradient(rgba(252,29,76,1), rgba(252,29,76,0))";
+            cir1.style.background="background: -moz-radial-gradient(rgba(252,29,76,1), rgba(252,29,76,0))";
+              cir1.style.background="radial-gradient(rgba(252,29,76,1), rgba(252,29,76,0));";*/
+
+            //cir1.style.opacity =".5";
+
+            setInterval(function(){
+                growCircle();
+
+            },60);
+
+            setInterval(changeBkgd, 500);
+            setInterval(changeBkgdBack, 1000);
+
+            function makeCirclesGrow(){
+             $('#cir2 ').css({
+            width: startGrad() + 'px'
+            });
+         }
+        }; ///end of end click
+
+
+
+
+
+
+
+
+
+
+            /*setInterval(function(){
+                 $(cir2).animate({width: '-=3px',
+                        height: '-=3px',
+
+            });
+
+            },700);*/
+       
+
+
+        });
+        </script>
+    </body>
+</html>

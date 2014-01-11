@@ -1,0 +1,97 @@
+<!-- this is for player, use index.html to shorten URL 
+    playnote.local
+-->
+
+<!DOCTYPE html>
+<html class="no-js">
+    <head>
+    <!--anaheim webfont-->
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title>playNote</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width">
+        <style>
+            html, body {
+                width: 100%;
+                height: 100%;
+                font-family: "Anaheim";
+                color: white;
+            }
+            .circle {
+            position: absolute;
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            background-color:#990000;
+            }
+            .template {
+                display: none;
+            }
+
+        </style>
+
+    </head>
+    <body>
+        <div class="container">
+            <div id="walker" class="circle template">
+                <div id="userName">blah</div>
+            </div>
+        </div> <!--end of container-->
+        <script type="text/javascript" src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
+        <script type="text/javascript">
+
+
+            //constructor
+            function walker(name){
+                this.init(name);
+                this.steps();
+            }
+
+            walker.prototype.init = function(name) {
+                this.posX = Math.floor(Math.random() * window.innerWidth);
+                this.posY = Math.floor(Math.random() * window.innerHeight);
+                this.name = name;
+                $('.template')
+                    .clone()
+                    .attr({'id': name})
+                    // .children() //all nested elements indside '.template'
+                    .html(name)
+                    // .parent() // goes back up tp '.template'
+                    .removeClass('template')
+                    .appendTo('.container');
+                // console.log(this.name);
+            }
+
+            walker.prototype.steps = function(){
+                var that = this;
+                setInterval(function() {
+                var step = Math.floor(Math.random() * 4);
+                console.log(step);
+                if (step == 0) {
+                     that.posX++;
+                     console.log(that.posX + " " + that.posY);
+                    } else if (step == 1) {
+                      that.posX--;
+                     console.log(that.posX + " " + that.posY);
+                    } else if (step == 2) {
+                      that.posY++;
+                    } else {
+                      that.posY--;
+                    }
+
+                    //
+                    $('#' + that.name).css({
+                        top: that.posY,
+                        left: that.posX
+                    });
+
+                },
+                100); 
+             };
+
+            var circ1 = new walker('noa');
+
+        </script>
+    </body>
+</html>

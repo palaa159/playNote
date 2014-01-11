@@ -1,0 +1,76 @@
+@font-face {
+    font-family: "Anaheim";
+    src: url(../fonts/Anaheim-Regular.otf);
+    /*Anaheim-Regular-unhinted.ttf*/
+}
+
+html, body {
+    font-family: "Anaheim";
+}
+section {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+}
+#d_intro {
+    top: 0;
+    text-align: center;
+    background: #fff;
+}
+#d_lobby {
+    top: 100%;
+    text-align: center;
+    background: #fff;
+}
+#d_game {
+    top: 200%;
+    background: #fff;
+}
+.d_intro_p_welcomeMsg {
+    font-size: 4em;
+}
+.d_intro_waiting_text {
+    font-size: 2em;
+}
+.template {
+    /*display: none;*/
+}
+#d_lobby_playerList {
+    text-align: center;
+}
+.d_player_bubble {
+    position: absolute;
+    text-align: center;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background: white;
+}
+#d_playerName {
+
+}
+#d_playerNote {
+
+}
+.circle {
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    text-align: center;
+    opacity: .8;
+}
+.template {
+    display: none;
+}
+.nameStyle {
+    padding-top: 100px;
+}
+#d_walker_container {
+    position: fixed;
+    top:0px;
+    left:0px;
+    width: 100%;
+    height: 100%;
+}

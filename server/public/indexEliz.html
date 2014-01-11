@@ -1,0 +1,116 @@
+<!-- this is for player, use index.html to shorten URL 
+    playnote.local
+-->
+
+<!DOCTYPE html>
+<html class="no-js">
+    <head>
+    <!--anaheim webfont-->
+    <!-- <link href='http://fonts.googleapis.com/css?family=Anaheim' rel='stylesheet' type='text/css'> -->
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title>playNote</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width">
+        <link rel="stylesheet" href="css/normalize.min.css">
+        <link rel="stylesheet" href="css/main.css">
+        <script type="text/javascript" src="js/responsive.js"></script>
+        <script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+        <link rel="stylesheet" href="css/ElizCustom.css">
+    </head>
+    <body>
+        <div id="container">
+
+<!--             <div id="screen1Container">
+ -->                <div id="screen1">   
+                    <h2 id="marginTop">Hey! You made it!</h2>
+                    <h1>Login to get a note</h1>
+                    <input id="pNameIpt" placeholder="Your Name">
+                    <div id="pJoinBtn"><h1>OK</h1></div>
+                </div>
+            </div>
+
+            <script type="responsive-template" id="template">
+
+                     // #marginTop{
+                     //    padding-top: <#= Math.round(Width/4) #>px;
+                     // }
+                      #screen1 {
+                         width: <#= Math.round(Width/2) #>px;
+                     }
+
+                     #screen2 {
+                         width: <#= Math.round(Width/2) #>px;
+                     }
+
+                     #screen3 {
+                         width: <#= Math.round(Width/2) #>px;
+                     }
+
+                     #screen4 {
+                         width: <#= Math.round(Width/2) #>px;
+                     }
+
+                     h2 {
+                        font-size:<#= Math.round(Width/30) #>px;
+                     }
+
+                     h1 {
+                        font-size:<#= Math.round(Width/20) #>px;
+                     }
+
+                    #pNameIpt {
+                        font-size:<#= Math.round(Width/28) #>px;
+                        line-height:<#= Math.round(Width/18) #>px;
+                     }
+
+                     #pJoinBtn, #pJoinBtn2 {
+                        width:<#= Math.round(Width/8) #>px;
+                        height:<#= Math.round(Width/8) #>px;
+                     }
+
+                    // #pJoinBtn p {
+                    //     font-size:<#= Math.round(Width/12) #>px;
+                    //  }
+            </script>
+
+
+            <div id="screen2">
+                <h2>Woo!</h2>
+                <div id="bigText"><div id="userName">UserX</div> you are</div>
+                <div id="assignedNote">C#</div>
+                <div id="instructions">1. Find your note on the screen.</div>
+                <div id="instructions">2. Touch your phone when it's your turn.</div>
+                <div id="pJoinBtn2"><h1>OK</h1></div>
+            </div>
+
+            <div id="screen3">
+                <p>wait for it...</p>
+            </div>
+
+             <div id="screen4">
+                <p>Now!</p>
+            </div>
+        </div><!--end of container-->
+
+            <script type="text/javascript">
+        r$.settings().debug = true;
+        r$.settings().indent = true;
+        r$.settings().useMediaQuery = true;
+        r$.dynamic($('#template').html(),function(w) {
+            return {
+                Width: w
+            };
+        });
+        r$.start();
+    </script>
+
+        <script src="http://localhost:9001/socket.io/socket.io.js"></script>
+        <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.10.1.min.js"><\/script>')</script>
+        <script src="js/vendor/modernizr-2.6.2-respond-1.1.0.min.js"></script>
+        <script src="js/vendor/prefixfree.min.js"></script>
+        <script src="js/handlers/p_socketHandler.js"></script>
+        <script src="js/handlers/screenHandler.js"></script>
+        <script src="js/player.js"></script>
+    </body>
+</html>
